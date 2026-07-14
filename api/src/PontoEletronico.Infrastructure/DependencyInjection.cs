@@ -22,6 +22,7 @@ public static class DependencyInjection
                 sql.MigrationsAssembly(typeof(PontoEletronicoDbContext).Assembly.FullName)));
 
         services.AddIdentity<ApplicationUser, IdentityRole>()
+                .AddErrorDescriber<MensagensIdentityPtBr>()
                 .AddEntityFrameworkStores<PontoEletronicoDbContext>()
                 .AddDefaultTokenProviders();
 

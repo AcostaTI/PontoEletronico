@@ -115,3 +115,4 @@ C:\Projetos\PontoEletronicoAPI\api\tests\PontoEletronico.UnitTests\obj\Debug\net
 C:\Projetos\PontoEletronicoAPI\api\tests\PontoEletronico.UnitTests\obj\Debug\net6.0\PontoEletronico.UnitTests.pdb
 C:\Projetos\PontoEletronicoAPI\api\tests\PontoEletronico.UnitTests\obj\Debug\net6.0\PontoEletronico.UnitTests.genruntimeconfig.cache
 C:\Projetos\PontoEletronicoAPI\api\tests\PontoEletronico.UnitTests\obj\Debug\net6.0\ref\PontoEletronico.UnitTests.dll
+C:\Projetos\PontoEletronicoAPI\api\tests\PontoEletronico.UnitTests\obj\Debug\net6.0\PontoEletronico.UnitTests.sourcelink.json

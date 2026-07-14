@@ -4,9 +4,9 @@ namespace PontoEletronico.Application.Usuarios.Dtos;
 
 public class LoginUsuarioDto
 {
-    [Required]
+    [Required(ErrorMessage = "Informe o nome de usuário.")]
     public string Username { get; set; } = null!;
 
-    [Required]
+    [Required(ErrorMessage = "Informe a senha.")]
     public string Password { get; set; } = null!;
 }

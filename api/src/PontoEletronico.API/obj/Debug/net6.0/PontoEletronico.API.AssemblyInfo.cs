@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PontoEletronico.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+458eb492fc8bf9f9a6c82295b579377c1bfd596d")]
 [assembly: System.Reflection.AssemblyProductAttribute("PontoEletronico.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PontoEletronico.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

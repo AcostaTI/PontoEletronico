@@ -25,6 +25,10 @@ public class ExceptionHandlingMiddleware
         {
             await _next(context);
         }
+        catch (UsuarioNaoAutenticadoException excecao)
+        {
+            await EscreverRespostaAsync(context, HttpStatusCode.Unauthorized, excecao.Message);
+        }
         catch (RegraDeNegocioException excecao)
         {
             await EscreverRespostaAsync(context, HttpStatusCode.BadRequest, excecao.Message, excecao.Erros);

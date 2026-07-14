@@ -17,3 +17,4 @@ C:\Projetos\PontoEletronicoAPI\api\src\PontoEletronico.Infrastructure\obj\Debug\
 C:\Projetos\PontoEletronicoAPI\api\src\PontoEletronico.Infrastructure\obj\Debug\net6.0\PontoEletronico.Infrastructure.pdb
 C:\Projetos\PontoEletronicoAPI\api\src\PontoEletronico.Infrastructure\obj\Debug\net6.0\PontoEletronico.Infrastructure.genruntimeconfig.cache
 C:\Projetos\PontoEletronicoAPI\api\src\PontoEletronico.Infrastructure\obj\Debug\net6.0\ref\PontoEletronico.Infrastructure.dll
+C:\Projetos\PontoEletronicoAPI\api\src\PontoEletronico.Infrastructure\obj\Debug\net6.0\PontoEletronico.Infrastructure.sourcelink.json

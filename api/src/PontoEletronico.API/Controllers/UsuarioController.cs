@@ -4,9 +4,7 @@ using PontoEletronico.Application.Usuarios.Interfaces;
 
 namespace PontoEletronico.API.Controllers;
 
-[ApiController]
-[Route("api/[controller]")]
-public class UsuarioController : ControllerBase
+public class UsuarioController : ApiControllerBase
 {
     private readonly IUsuarioService _usuarioService;
 

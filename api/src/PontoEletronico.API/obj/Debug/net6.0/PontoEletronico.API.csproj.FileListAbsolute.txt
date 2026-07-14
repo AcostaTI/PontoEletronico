@@ -91,3 +91,4 @@ C:\Projetos\PontoEletronicoAPI\api\src\PontoEletronico.API\obj\Debug\net6.0\refi
 C:\Projetos\PontoEletronicoAPI\api\src\PontoEletronico.API\obj\Debug\net6.0\PontoEletronico.API.pdb
 C:\Projetos\PontoEletronicoAPI\api\src\PontoEletronico.API\obj\Debug\net6.0\PontoEletronico.API.genruntimeconfig.cache
 C:\Projetos\PontoEletronicoAPI\api\src\PontoEletronico.API\obj\Debug\net6.0\ref\PontoEletronico.API.dll
+C:\Projetos\PontoEletronicoAPI\api\src\PontoEletronico.API\obj\Debug\net6.0\PontoEletronico.API.sourcelink.json
