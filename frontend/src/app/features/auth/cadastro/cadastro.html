@@ -1,0 +1,81 @@
+<div class="painel">
+  <div class="marca">
+    <span class="marca__icone">🕒</span>
+    <span class="marca__nome">Ponto Eletrônico</span>
+  </div>
+
+  <h1 class="titulo">Criar conta</h1>
+  <p class="subtitulo">Leva menos de um minuto.</p>
+
+  @if (erro()) {
+    <div class="alerta alerta--erro" role="alert">{{ erro() }}</div>
+  }
+
+  <form [formGroup]="formulario" (ngSubmit)="cadastrar()" novalidate>
+    <div class="campo">
+      <label for="username">Usuário</label>
+      <input
+        id="username"
+        type="text"
+        formControlName="username"
+        placeholder="seu.usuario"
+        autocomplete="username"
+        [class.invalido]="invalido('username')"
+      />
+      @if (invalido('username')) {
+        <span class="erro-campo">Informe o usuário.</span>
+      }
+    </div>
+
+    <div class="campo">
+      <label for="email">E-mail</label>
+      <input
+        id="email"
+        type="email"
+        formControlName="email"
+        placeholder="voce@empresa.com"
+        autocomplete="email"
+        [class.invalido]="invalido('email')"
+      />
+      @if (invalido('email')) {
+        <span class="erro-campo">Informe um e-mail válido.</span>
+      }
+    </div>
+
+    <div class="campo">
+      <label for="password">Senha</label>
+      <input
+        id="password"
+        type="password"
+        formControlName="password"
+        placeholder="mínimo de 6 caracteres"
+        autocomplete="new-password"
+        [class.invalido]="invalido('password')"
+      />
+      @if (invalido('password')) {
+        <span class="erro-campo">A senha deve ter ao menos 6 caracteres.</span>
+      }
+    </div>
+
+    <div class="campo">
+      <label for="rePassword">Confirmar senha</label>
+      <input
+        id="rePassword"
+        type="password"
+        formControlName="rePassword"
+        placeholder="repita a senha"
+        autocomplete="new-password"
+        [class.invalido]="invalido('rePassword') || senhasDiferentes"
+      />
+      @if (senhasDiferentes) {
+        <span class="erro-campo">As senhas não conferem.</span>
+      }
+    </div>
+
+    <button type="submit" class="botao botao--bloco" [disabled]="enviando()">
+      {{ enviando() ? 'Criando conta…' : 'Criar conta' }}
+    </button>
+  </form>
+
+  <p class="rodape">Já tem uma conta? <a routerLink="/login">Entrar</a></p>
+</div>

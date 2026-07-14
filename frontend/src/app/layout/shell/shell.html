@@ -1,0 +1,25 @@
+<header class="barra">
+  <div class="barra__conteudo">
+    <div class="marca">
+      <span class="marca__icone">🕒</span>
+      <span class="marca__nome">Ponto Eletrônico</span>
+    </div>
+
+    <nav class="navegacao">
+      <a routerLink="/dashboard" routerLinkActive="ativo">Hoje</a>
+      <a routerLink="/espelho" routerLinkActive="ativo">Espelho do mês</a>
+    </nav>
+
+    <div class="usuario">
+      <span class="usuario__avatar" aria-hidden="true">{{ iniciais }}</span>
+      <span class="usuario__nome">{{ usuario()?.username }}</span>
+      <button type="button" class="botao botao--secundario botao--sair" (click)="sair()">
+        Sair
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="conteudo">
+  <router-outlet />
+</main>

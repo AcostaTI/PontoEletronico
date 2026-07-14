@@ -1,0 +1,124 @@
+.cabecalho {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 22px;
+}
+
+.cabecalho__titulo {
+  font-size: 1.5rem;
+}
+
+.cabecalho__subtitulo {
+  margin: 4px 0 0;
+  font-size: 0.9375rem;
+  color: var(--cor-texto-suave);
+}
+
+.campo--mes {
+  margin-bottom: 0;
+}
+
+.resumo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.indicador {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.indicador__rotulo {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--cor-texto-suave);
+}
+
+.indicador__valor {
+  font-size: 1.75rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.dia {
+  margin-bottom: 16px;
+  padding: 20px 24px;
+}
+
+.dia__cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.dia__data {
+  display: block;
+  font-size: 1rem;
+  text-transform: capitalize;
+}
+
+.dia__semana {
+  font-size: 0.8125rem;
+  color: var(--cor-texto-suave);
+  text-transform: capitalize;
+}
+
+.dia__total {
+  padding: 6px 12px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--cor-primaria);
+  background: var(--cor-primaria-suave);
+  border-radius: 999px;
+}
+
+.batidas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.batidas__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  background: #f8fafc;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-sm);
+}
+
+.batidas__hora {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.vazio {
+  margin: 0;
+  font-size: 0.9375rem;
+  color: var(--cor-texto-suave);
+}
+
+@media (max-width: 640px) {
+  .cabecalho {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .resumo {
+    grid-template-columns: 1fr;
+  }
+}

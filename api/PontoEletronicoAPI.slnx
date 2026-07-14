@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/PontoEletronico.Domain/PontoEletronico.Domain.csproj" />
+    <Project Path="src/PontoEletronico.Application/PontoEletronico.Application.csproj" />
+    <Project Path="src/PontoEletronico.Infrastructure/PontoEletronico.Infrastructure.csproj" />
+    <Project Path="src/PontoEletronico.API/PontoEletronico.API.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/PontoEletronico.UnitTests/PontoEletronico.UnitTests.csproj" />
+  </Folder>
+</Solution>

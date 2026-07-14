@@ -1,0 +1,53 @@
+<div class="painel">
+  <div class="marca">
+    <span class="marca__icone">🕒</span>
+    <span class="marca__nome">Ponto Eletrônico</span>
+  </div>
+
+  <h1 class="titulo">Bem-vindo de volta</h1>
+  <p class="subtitulo">Entre com sua conta para registrar o ponto.</p>
+
+  @if (erro()) {
+    <div class="alerta alerta--erro" role="alert">{{ erro() }}</div>
+  }
+
+  <form [formGroup]="formulario" (ngSubmit)="entrar()" novalidate>
+    <div class="campo">
+      <label for="username">Usuário</label>
+      <input
+        id="username"
+        type="text"
+        formControlName="username"
+        placeholder="seu.usuario"
+        autocomplete="username"
+        [class.invalido]="invalido('username')"
+      />
+      @if (invalido('username')) {
+        <span class="erro-campo">Informe o usuário.</span>
+      }
+    </div>
+
+    <div class="campo">
+      <label for="password">Senha</label>
+      <input
+        id="password"
+        type="password"
+        formControlName="password"
+        placeholder="••••••••"
+        autocomplete="current-password"
+        [class.invalido]="invalido('password')"
+      />
+      @if (invalido('password')) {
+        <span class="erro-campo">Informe a senha.</span>
+      }
+    </div>
+
+    <button type="submit" class="botao botao--bloco" [disabled]="enviando()">
+      {{ enviando() ? 'Entrando…' : 'Entrar' }}
+    </button>
+  </form>
+
+  <p class="rodape">
+    Não tem uma conta? <a routerLink="/cadastro">Cadastre-se</a>
+  </p>
+</div>

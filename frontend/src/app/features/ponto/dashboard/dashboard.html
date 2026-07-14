@@ -1,0 +1,72 @@
+@if (erro()) {
+  <div class="alerta alerta--erro" role="alert">{{ erro() }}</div>
+}
+
+<section class="cartao relogio">
+  <div class="relogio__info">
+    <p class="relogio__data">{{ agora() | date: "EEEE, d 'de' MMMM 'de' y" }}</p>
+    <p class="relogio__hora">{{ agora() | date: 'HH:mm:ss' }}</p>
+
+    <p class="relogio__situacao">
+      @if (turnoAberto()) {
+        <span class="ponto-vivo" aria-hidden="true"></span> Turno em andamento
+      } @else {
+        Fora do expediente
+      }
+    </p>
+  </div>
+
+  <button
+    type="button"
+    class="botao registrar"
+    [class.registrar--saida]="proximoRegistro() === TipoRegistro.SAIDA"
+    [disabled]="registrando() || carregando()"
+    (click)="registrarPonto()"
+  >
+    @if (registrando()) {
+      Registrando…
+    } @else if (proximoRegistro() === TipoRegistro.ENTRADA) {
+      Registrar entrada
+    } @else {
+      Registrar saída
+    }
+  </button>
+</section>
+
+<section class="resumo">
+  <div class="cartao indicador">
+    <span class="indicador__rotulo">Trabalhado hoje</span>
+    <strong class="indicador__valor">{{ totalTrabalhado() }}</strong>
+  </div>
+
+  <div class="cartao indicador">
+    <span class="indicador__rotulo">Batidas hoje</span>
+    <strong class="indicador__valor">{{ linhaDoTempo().length }}</strong>
+  </div>
+</section>
+
+<section class="cartao">
+  <h2 class="secao__titulo">Registros de hoje</h2>
+
+  @if (carregando()) {
+    <p class="vazio">Carregando registros…</p>
+  } @else if (linhaDoTempo().length === 0) {
+    <p class="vazio">Nenhum ponto registrado hoje. Bata o seu primeiro ponto acima.</p>
+  } @else {
+    <ol class="linha-do-tempo">
+      @for (registro of linhaDoTempo(); track registro.id) {
+        <li class="linha-do-tempo__item">
+          <span
+            class="etiqueta"
+            [class.etiqueta--entrada]="registro.tipoRegistro === TipoRegistro.ENTRADA"
+            [class.etiqueta--saida]="registro.tipoRegistro === TipoRegistro.SAIDA"
+          >
+            {{ registro.tipoRegistro === TipoRegistro.ENTRADA ? 'ENTRADA' : 'SAÍDA' }}
+          </span>
+
+          <span class="linha-do-tempo__hora">{{ registro.horaRegistro }}</span>
+        </li>
+      }
+    </ol>
+  }
+</section>

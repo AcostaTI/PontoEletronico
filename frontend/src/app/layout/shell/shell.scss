@@ -1,0 +1,103 @@
+.barra {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--cor-superficie);
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.barra__conteudo {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  max-width: 960px;
+  height: 64px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.marca__icone {
+  font-size: 1.25rem;
+}
+
+.marca__nome {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.navegacao {
+  display: flex;
+  gap: 4px;
+  margin-right: auto;
+}
+
+.navegacao a {
+  padding: 8px 12px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--cor-texto-suave);
+  text-decoration: none;
+  border-radius: var(--raio-sm);
+}
+
+.navegacao a:hover {
+  background: #f8fafc;
+}
+
+.navegacao a.ativo {
+  color: var(--cor-primaria);
+  background: var(--cor-primaria-suave);
+}
+
+.usuario {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.usuario__avatar {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--cor-primaria);
+  background: var(--cor-primaria-suave);
+  border-radius: 50%;
+}
+
+.usuario__nome {
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+
+.botao--sair {
+  padding: 7px 14px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.conteudo {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 32px 24px 64px;
+}
+
+@media (max-width: 700px) {
+  .barra__conteudo {
+    gap: 16px;
+    padding: 0 16px;
+  }
+
+  .marca__nome,
+  .usuario__nome {
+    display: none;
+  }
+}

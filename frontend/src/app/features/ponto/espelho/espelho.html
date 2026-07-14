@@ -1,0 +1,71 @@
+<header class="cabecalho">
+  <div>
+    <h1 class="cabecalho__titulo">Espelho de ponto</h1>
+    <p class="cabecalho__subtitulo">Consulte suas batidas por competência.</p>
+  </div>
+
+  <div class="campo campo--mes">
+    <label for="competencia">Competência</label>
+    <input
+      id="competencia"
+      type="month"
+      [value]="competencia()"
+      (change)="aoTrocarCompetencia($any($event.target).value)"
+    />
+  </div>
+</header>
+
+@if (erro()) {
+  <div class="alerta alerta--erro" role="alert">{{ erro() }}</div>
+}
+
+<section class="resumo">
+  <div class="cartao indicador">
+    <span class="indicador__rotulo">Total no mês</span>
+    <strong class="indicador__valor">{{ totalDoMes() }}</strong>
+  </div>
+
+  <div class="cartao indicador">
+    <span class="indicador__rotulo">Dias trabalhados</span>
+    <strong class="indicador__valor">{{ diasTrabalhados() }}</strong>
+  </div>
+</section>
+
+@if (carregando()) {
+  <div class="cartao">
+    <p class="vazio">Carregando registros…</p>
+  </div>
+} @else if (dias().length === 0) {
+  <div class="cartao">
+    <p class="vazio">Nenhum registro encontrado nesta competência.</p>
+  </div>
+} @else {
+  @for (dia of dias(); track dia.data) {
+    <article class="cartao dia">
+      <header class="dia__cabecalho">
+        <div>
+          <strong class="dia__data">{{ dia.data | date: "d 'de' MMMM" }}</strong>
+          <span class="dia__semana">{{ dia.data | date: 'EEEE' }}</span>
+        </div>
+
+        <span class="dia__total">{{ dia.total }}</span>
+      </header>
+
+      <ul class="batidas">
+        @for (registro of dia.registros; track registro.id) {
+          <li class="batidas__item">
+            <span
+              class="etiqueta"
+              [class.etiqueta--entrada]="registro.tipoRegistro === TipoRegistro.ENTRADA"
+              [class.etiqueta--saida]="registro.tipoRegistro === TipoRegistro.SAIDA"
+            >
+              {{ registro.tipoRegistro === TipoRegistro.ENTRADA ? 'ENTRADA' : 'SAÍDA' }}
+            </span>
+
+            <span class="batidas__hora">{{ registro.horaRegistro }}</span>
+          </li>
+        }
+      </ul>
+    </article>
+  }
+}

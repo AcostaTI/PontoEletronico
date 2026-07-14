@@ -1,0 +1,161 @@
+.relogio {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 20px;
+  padding: 28px;
+}
+
+.relogio__data {
+  margin: 0 0 4px;
+  font-size: 0.875rem;
+  color: var(--cor-texto-suave);
+  text-transform: capitalize;
+}
+
+.relogio__hora {
+  margin: 0;
+  font-size: 2.75rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.relogio__situacao {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 8px 0 0;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--cor-texto-suave);
+}
+
+.ponto-vivo {
+  width: 8px;
+  height: 8px;
+  background: var(--cor-entrada);
+  border-radius: 50%;
+  animation: pulsar 1.6s ease-in-out infinite;
+}
+
+@keyframes pulsar {
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 rgb(5 150 105 / 45%);
+  }
+  50% {
+    opacity: 0.75;
+    box-shadow: 0 0 0 6px rgb(5 150 105 / 0%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ponto-vivo {
+    animation: none;
+  }
+}
+
+.registrar {
+  flex-shrink: 0;
+  padding: 16px 30px;
+  font-size: 1rem;
+  background: var(--cor-entrada);
+}
+
+.registrar:hover:not(:disabled) {
+  background: #047857;
+}
+
+.registrar--saida {
+  background: var(--cor-saida);
+}
+
+.registrar--saida:hover:not(:disabled) {
+  background: #b45309;
+}
+
+.resumo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.indicador {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.indicador__rotulo {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--cor-texto-suave);
+}
+
+.indicador__valor {
+  font-size: 1.75rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.secao__titulo {
+  margin-bottom: 16px;
+  font-size: 1.0625rem;
+}
+
+.linha-do-tempo {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.linha-do-tempo__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.linha-do-tempo__item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.linha-do-tempo__hora {
+  font-size: 1rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.vazio {
+  margin: 0;
+  padding: 8px 0;
+  font-size: 0.9375rem;
+  color: var(--cor-texto-suave);
+}
+
+@media (max-width: 640px) {
+  .relogio {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .relogio__situacao {
+    justify-content: center;
+  }
+
+  .registrar {
+    width: 100%;
+  }
+
+  .resumo {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,69 @@
+/* Layout compartilhado pelas telas de login e cadastro. */
+
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 24px;
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 55%, #a855f7 100%);
+}
+
+.painel {
+  width: 100%;
+  max-width: 420px;
+  padding: 36px;
+  background: var(--cor-superficie);
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgb(15 23 42 / 25%);
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 26px;
+}
+
+.marca__icone {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  font-size: 1.25rem;
+  background: var(--cor-primaria-suave);
+  border-radius: 10px;
+}
+
+.marca__nome {
+  font-size: 1.0625rem;
+  font-weight: 700;
+}
+
+.titulo {
+  margin-bottom: 4px;
+  font-size: 1.5rem;
+}
+
+.subtitulo {
+  margin: 0 0 26px;
+  font-size: 0.9375rem;
+  color: var(--cor-texto-suave);
+}
+
+.rodape {
+  margin: 22px 0 0;
+  font-size: 0.875rem;
+  text-align: center;
+  color: var(--cor-texto-suave);
+}
+
+.rodape a {
+  font-weight: 600;
+  color: var(--cor-primaria);
+  text-decoration: none;
+}
+
+.rodape a:hover {
+  text-decoration: underline;
+}
