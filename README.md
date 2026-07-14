@@ -59,7 +59,7 @@ Acesse o sistema em http://localhost:4200. A documentação da API fica em https
 
 Três detalhes costumam travar a primeira execução:
 
-1. `Jwt:Key` vem **vazio** em [appsettings.json](api/src/PontoEletronico.API/appsettings.json) e a API se recusa a subir sem ele.
+1. `Jwt:Key` vem **vazio** em [appsettings.json](api/src/PontoEletronico.API/appsettings.json) e a API se recusa a subir sem ele(para testar em ambiente de dev não precisa, já tem um valor default).
 2. As migrations **não** são aplicadas na inicialização — sem o `dotnet ef database update`, a API sobe mas quebra na primeira consulta.
 3. Sem `dotnet dev-certs https --trust`, o proxy do frontend não consegue falar com a API.
 
