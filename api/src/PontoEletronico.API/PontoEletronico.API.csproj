@@ -5,6 +5,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>PontoEletronico.API</RootNamespace>
+    <UserSecretsId>ponto-eletronico-api-6f3a1c92</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>

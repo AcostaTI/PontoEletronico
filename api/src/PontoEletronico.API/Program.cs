@@ -15,6 +15,13 @@ const string PoliticaCors = "FrontendAngular";
 var jwtSettings = builder.Configuration.GetSection(JwtSettings.SectionName).Get<JwtSettings>()
     ?? throw new InvalidOperationException("Seção de configuração 'Jwt' não encontrada.");
 
+// HS256 exige chave de 256 bits. Sem esta checagem a API sobe com a chave vazia de
+// appsettings.json e só quebra na primeira requisição autenticada.
+if (string.IsNullOrWhiteSpace(jwtSettings.Key) || Encoding.UTF8.GetByteCount(jwtSettings.Key) < 32)
+    throw new InvalidOperationException(
+        "'Jwt:Key' não configurada ou muito curta: informe ao menos 32 caracteres. " +
+        "Em desenvolvimento, use 'dotnet user-secrets set \"Jwt:Key\" \"<chave>\"'.");
+
 var origensPermitidas = builder.Configuration.GetSection("Cors:OrigensPermitidas").Get<string[]>()
     ?? new[] { "http://localhost:4200" };
 

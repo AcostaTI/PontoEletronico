@@ -1,0 +1,15 @@
+# Artefatos de build .NET
+bin/
+obj/
+[Dd]ebug/
+[Rr]elease/
+TestResults/
+
+# Arquivos de usuário / IDE
+*.user
+*.suo
+.vs/
+.idea/
+
+# Overrides locais (nunca versionar segredos)
+appsettings.*.local.json
